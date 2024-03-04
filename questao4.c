@@ -6,7 +6,7 @@ void converter_para_romano(int numero) {
     const char *valores_romanos[] = { "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
 
     if (numero < 1 || numero > 100) {
-        printf("Número fora do intervalo permitido (1-100)\n");
+        printf("Numero fora do intervalo permitido (1-100)\n");
         return;
     }
 
@@ -23,7 +23,7 @@ void converter_para_romano(int numero) {
 
 int main() {
     int i;
-    printf("Tabela de números decimais para algarismos romanos (1-100):\n");
+    printf("Tabela de numeros decimais para algarismos romanos (1-100):\n");
     for (i = 1; i <= 100; i++) {
         converter_para_romano(i);
     }
