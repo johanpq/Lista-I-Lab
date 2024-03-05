@@ -1,20 +1,33 @@
 #include <stdio.h>
 
-int produto(int x1, int x2) {
-    if (x2 == 0) {
-        return 0; 
-    } else {
-        return x1 + produto(x1, x2 - 1);
+int InverterNumero(int numero) {
+    int invertido = 0;
+    int digito;
+
+    // Enquanto houver dígitos no número.
+    while (numero > 0) {
+        // Extrai o último dígito do número.
+        digito = numero % 10;
+        
+        // Adiciona o dígito invertido ao número invertido.
+        invertido = invertido * 10 + digito;
+        
+        // Remove o último dígito do número original.
+        numero /= 10;
     }
+    
+    return invertido;
 }
 
-int main(void) {
+int main() {
 
-    int x1, x2;
-    printf("Digite dois números inteiros x1 e x2: ");
-    scanf("%d %d", &x1, &x2);
-    int resultado = produto(x1, x2);
-    printf("O produto de %d e %d é: %d\n", x1, x2, resultado);
+    int numero;
+    
+    printf("Digite um número inteiro: ");
+    scanf("%d", &numero);
+    
+    int invertido = InverterNumero(numero);
+    printf("Número invertido: %d\n", invertido);
     
     return 0;
 }
